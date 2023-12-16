@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Счётчик</title>
+</head>
+<body>
+    <header>
+        <a href="https://ombuu228.github.io/csfail/" class="header-button">Рулетка</a>
+    </header>
+    <div class="container">
+        <h1>Счётчик</h1>
+        <div class="display">
+            <p id="currentValue">0</p>
+        </div>
+        <div class="buttons">
+            <button onclick="incrementValue(0.5)">+0.5</button>
+            <button onclick="decrementValue(0.5)">-0.5</button>
+            <button onclick="saveToCalendar()">Сохранить</button>
+            <button onclick="clearHistory()">Очистить историю</button>
+        </div>
+        <div class="history" id="history">
+        </div>
+        <div class="total">
+            <p>Общая сумма за день: <span id="totalValue">0</span></p>
+        </div>
+        <div class="calendar">
+            <p id="currentDate"></p>
+        </div>
+        <div class="time">
+            <p id="currentTime"></p>
+        </div>
+    </div>
+    <div class="oneadie-label">oneadie</div>
+    <script src="script.js"></script>
+</body>
+</html>
