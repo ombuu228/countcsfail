@@ -170,3 +170,38 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.setItem('lastSavedDate', currentDate);
     }
 });
+function performFunction() {
+    const select = document.getElementById('functions');
+    const selectedValue = select.value;
+
+    switch (selectedValue) {
+        case 'convertToUah':
+            convertToUah();
+            break;
+        case 'calculateCommission':
+            calculateCommission();
+            break;
+        default:
+            break;
+    }
+}
+
+function convertToUah() {
+    const currentValue = parseFloat(document.getElementById('currentValue').textContent);
+    const exchangeRate = 37.05;
+    const result = currentValue * exchangeRate;
+    displayResult(`Сумма в гривнах: ${result.toFixed(2)}`);
+}
+
+function calculateCommission() {
+    const totalValue = parseFloat(document.getElementById('totalValue').textContent);
+    const commissionRate = 0.10;
+    const commissionFee = 1;
+    const commission = totalValue * commissionRate + commissionFee;
+    displayResult(`Комиссия вывода: ${commission.toFixed(2)}`);
+}
+
+function displayResult(message) {
+    const resultElement = document.getElementById('result');
+    resultElement.textContent = message;
+}

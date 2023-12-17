@@ -11,6 +11,7 @@
         <a href="https://ombuu228.github.io/csfail/" class="header-button">Рулетка</a>
     </header>
     <div class="container">
+
         <h1>Счётчик</h1>
         <div class="display">
             <p id="currentValue">0</p>
@@ -20,11 +21,20 @@
             <button onclick="decrementValue(0.5)">-0.5</button>
             <button onclick="saveToCalendar()">Сохранить</button>
             <button onclick="clearHistory()">Очистить историю</button>
+            <div class="additional-functions">
+                <label for="functions">Выберите функцию:</label>
+                <select id="functions">
+                    <option value="convertToUah">Перевести в грн</option>
+                    <option value="calculateCommission">Посчитать комиссию вывода</option>
+                </select>
+                <div id="result"></div>
+            </div>
+            <button onclick="performFunction()">Выполнить</button>
         </div>
         <div class="history" id="history">
         </div>
         <div class="total">
-            <p>Общая сумма за день: <span id="totalValue">0</span></p>
+            <p>Общая сумма: <span id="totalValue">0</span></p>
         </div>
         <div class="calendar">
             <p id="currentDate"></p>
